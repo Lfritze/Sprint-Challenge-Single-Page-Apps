@@ -8,7 +8,7 @@ import CharacterCard from './components/CharacterCard';
 import SearchForm from './components/SearchForm';
 
 const Main = styled.div`
-  background: linear-gradient(to left, #159957, #155799);
+  background: linear-gradient(to left, #14955a, #004991);
   color: white;
   height:100%;
 `

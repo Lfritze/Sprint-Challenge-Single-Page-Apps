@@ -19,19 +19,22 @@ import styled from 'styled-components'
 
 const Content = styled.div`
   max-width: 100%;
-`;
+  margin:30px auto;
+  justify-content:center;
+`
 
 const CharTitle = styled.h3`
   text-align: center;
+  color: white;
+  text-decoration: none;
 
-`;
-
+`
 const CharContent = styled.p`
   text-align:center;
   color:white;
   text-decoration: none;
   width: 100%;
-`;
+`
 
 export default function CharacterList() {
   const [characterData, setCharacterData] = useState ([])

@@ -3,6 +3,14 @@ import styled from 'styled-components'
 
 const Welcome = styled.div`
   max-width: 100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-items:center;
+  margin:30px auto;
+  height:100%;
+  padding: 1%;
+  font-family: 'Tauri', sans-serif;
   `;
 
 export default function WelcomePage() {
