@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components'
 
+// ****************NOTES NOTES ***********************
+
 // IMPORTANT!!! ****RICK & MORTY DOCS HERE: https://rickandmortyapi.com/documentation/******
 // Character info here: https://rickandmortyapi.com/documentation/#character ******
 //*****Notes from API Docs***** */
@@ -10,10 +12,25 @@ import styled from 'styled-components'
 // name	string	The name of the character.
 // status	string	The status of the character ('Alive', 'Dead' or 'unknown').
 // species	string	The species of the character.
+// image	string (url)	Link to the character's image. All images are 300x300px and most are medium shots or portraits since they are intended to be used as avatars.
+
+//*****************NOTES END************************* */
 
 
 const Content = styled.div`
   max-width: 100%;
+`;
+
+const CharTitle = styled.h3`
+  text-align: center;
+
+`;
+
+const CharContent = styled.p`
+  text-align:center;
+  color:white;
+  text-decoration: none;
+  width: 100%;
 `;
 
 export default function CharacterList() {
@@ -32,22 +49,22 @@ export default function CharacterList() {
     })
   }, []);
 
-
   return (
     <section className="character-list"> {
       characterData.map(item => {
         return (
           <div className = 'img-card'>
             <Content key = {item.id}>
-
-              
+              <Link to={`/character/${item.id}`}> 
+                <img src={item.image} alt ='Character Information' />
+                <CharTitle> Name: {item.name} </CharTitle>
+                <CharContent> Species: {item.species}</CharContent>
+              </Link>
             </Content>
           </div>
         )
       })
     }
-      
-      
     </section>
   );
 }
