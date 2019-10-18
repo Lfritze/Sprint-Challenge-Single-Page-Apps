@@ -21,7 +21,7 @@ export default function WelcomePage() {
         <img
           className="main-img"
           src="https://wallpaperaccess.com/full/238256.jpg"
-          alt="Rick and Morty background image"
+          alt="Rick and Morty background"
         />
       </Welcome>
     </section>

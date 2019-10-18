@@ -21,20 +21,19 @@ const Content = styled.div`
   max-width: 100%;
   margin:30px auto;
   justify-content:center;
-`
+`;
 
 const CharTitle = styled.h3`
   text-align: center;
   color: white;
   text-decoration: none;
-
-`
+`;
 const CharContent = styled.p`
   text-align:center;
   color:white;
   text-decoration: none;
   width: 100%;
-`
+`;
 
 export default function CharacterList() {
   const [characterData, setCharacterData] = useState ([])
@@ -54,20 +53,22 @@ export default function CharacterList() {
 
   return (
     <section className="character-list"> {
-      characterData.map(item => {
+      characterData.map((item, index) => {
         return (
-          <div className = 'img-card'>
-            <Content key = {item.id}>
-              <Link to={`/character/${item.id}`}> 
+          // <div className = 'img-card'>
+            <Content key = {index}>
+              <Link to={`/character/${index.id}`}> 
                 <img src={item.image} alt ='Character Information' />
                 <CharTitle> Name: {item.name} </CharTitle>
                 <CharContent> Species: {item.species}</CharContent>
               </Link>
             </Content>
-          </div>
+          // </div>
         )
       })
     }
     </section>
   );
 }
+
+//index.js:1375 Warning: Each child in a list should have a unique "key" prop.

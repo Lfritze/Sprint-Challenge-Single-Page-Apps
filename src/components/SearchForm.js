@@ -49,7 +49,6 @@ export default function SearchForm() {
   },[searchTerm])
 
   const handleChange = event => {
-    console.log(event.target.value)
     setSearchTerm(event.target.value)
   }
 
