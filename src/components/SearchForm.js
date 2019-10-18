@@ -1,10 +1,81 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import {Link} from 'react-router-dom'
+import axios from 'axios'
+import styled from 'styled-components'
+
+const FormInput = styled.form`
+  text-align:center;
+  padding:15px;
+`;
+
+const Content = styled.div`
+  max-width:100%;
+  padding: 1%;
+  margin: 0 auto;
+`;
+
+const Title = styled.h3`
+  text-align:center;
+  color:white;
+  text-decoration:none;
+`;
+const CharacterContent = styled.p`
+  text-align:center;
+  color:white;
+  text-decoration:none;
+`;
 
 export default function SearchForm() {
- 
+  const [searchTerm, setSearchTerm] = useState('')
+  const [searchResults, setSearchResults] = useState([])
+
+  useEffect( () => {
+    axios
+    .get('https://rickandmortyapi.com/api/character/')
+    .then(response => {
+      const data = response.data.results
+      const results = data.filter(item => {
+        return item.name.toLowerCase().includes(searchTerm)
+      })
+      setSearchResults(results)
+    })
+    
+  },[searchTerm])
+
+  const handleChange = event => {
+    setSearchTerm(event.target.value)
+  }
+
   return (
     <section className="search-form">
-     // Add a search form here
+      <FormInput>
+      <input
+        type="text"
+        placeholder="Search"
+        name="textfield"
+        value={searchTerm}
+        onChange={handleChange}
+      />
+      </FormInput>
+      <ul>
+    {
+      searchResults.map(item => {
+        return (
+          
+        <Content key={item.id}>
+          <div className = 'search-img-card'>
+          <Link to={`/character/${item.id}`}>
+            <img src={item.image} alt="character profile" />
+            <Title>Name: {item.name}</Title>
+            <CharacterContent>Species: {item.species}</CharacterContent>
+            <CharacterContent>Status:{item.status}</CharacterContent>
+          </Link>
+          </div>
+        </Content>
+        )
+      })
+    }
+      </ul>
     </section>
   );
 }
