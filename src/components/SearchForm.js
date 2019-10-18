@@ -29,7 +29,7 @@ const Title = styled.h3`
 const CharacterContent = styled.p`
   text-align:center;
   color:white;
-  text-decoration:none
+  text-decoration:none;
 `
 
 export default function SearchForm() {

@@ -53,17 +53,20 @@ export default function CharacterList() {
 
   return (
     <section className="character-list"> {
-      characterData.map((item, index) => {
+      characterData.map(item  => {
         return (
-          // <div className = 'img-card'>
-            <Content key = {index}>
-              <Link to={`/character/${index.id}`}> 
+        
+            <Content key = {item.id}>
+              {/* <div className = 'search-img-card'> */}
+              <Link to={`/character/${item.id}`}> 
                 <img src={item.image} alt ='Character Information' />
                 <CharTitle> Name: {item.name} </CharTitle>
                 <CharContent> Species: {item.species}</CharContent>
+                <CharContent>Status:{item.status}</CharContent>
               </Link>
+              {/* </div> */}
             </Content>
-          // </div>
+       
         )
       })
     }

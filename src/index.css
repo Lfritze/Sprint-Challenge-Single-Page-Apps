@@ -67,6 +67,10 @@ input {
   padding: 0.5%;
 }
 
+/* .search-form {
+  
+} */
+
 .search-img-card {
   margin: 0 auto;
   margin-bottom: 1%;
@@ -74,6 +78,7 @@ input {
   border-radius: 20px;
   background: black;
   padding: 0.5%;
+ 
 }
 
 .img-card {
@@ -82,6 +87,7 @@ input {
   border-radius: 10px;
   background: black;
   padding: 0.5%;
+  
 }
 
 .character-list {
@@ -89,3 +95,4 @@ input {
   flex-wrap: wrap;
   margin: 1%;
 }
+
