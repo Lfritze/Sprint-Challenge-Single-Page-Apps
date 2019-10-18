@@ -6,38 +6,32 @@ import styled from 'styled-components'
 const FormInput = styled.form`
   text-align:center;
   padding:15px;
-`
+`;
 
 const Content = styled.div`
   max-width:100%;
-  display:flex;
-  flex-wrap: wrap;
-  
-
-  // flex-direction:column;
-  // justify-content:center;
-  // align-items:center;
-  // margin:30px auto;
-  // font-family: 'Tauri', sans-serif;
-`
+  padding: 1%;
+  margin: 0 auto;
+`;
 
 const Title = styled.h3`
   text-align:center;
   color:white;
   text-decoration:none;
-`
+`;
 const CharacterContent = styled.p`
   text-align:center;
   color:white;
   text-decoration:none;
-`
+`;
 
 export default function SearchForm() {
   const [searchTerm, setSearchTerm] = useState('')
   const [searchResults, setSearchResults] = useState([])
 
   useEffect( () => {
-    axios.get('https://rickandmortyapi.com/api/character/')
+    axios
+    .get('https://rickandmortyapi.com/api/character/')
     .then(response => {
       const data = response.data.results
       const results = data.filter(item => {
@@ -78,7 +72,6 @@ export default function SearchForm() {
           </Link>
           </div>
         </Content>
-        
         )
       })
     }

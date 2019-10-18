@@ -1,5 +1,4 @@
 import React from "react";
-// import Header from "./components/Header.js";
 import { Route, NavLink} from 'react-router-dom';
 import styled from 'styled-components';
 import CharacterList from './components/CharacterList';
@@ -11,7 +10,7 @@ const Main = styled.div`
   background: linear-gradient(to left, #14955a, #004991);
   color: white;
   height:100%;
-`
+`;
 const Nav = styled.nav`
   text-align:center;
   padding: 20px

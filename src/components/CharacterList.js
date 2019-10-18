@@ -21,18 +21,21 @@ const Content = styled.div`
   max-width: 100%;
   margin:30px auto;
   justify-content:center;
+  background: black;
 `;
 
 const CharTitle = styled.h3`
   text-align: center;
   color: white;
   text-decoration: none;
+  
 `;
 const CharContent = styled.p`
   text-align:center;
   color:white;
   text-decoration: none;
   width: 100%;
+  
 `;
 
 export default function CharacterList() {
@@ -74,4 +77,3 @@ export default function CharacterList() {
   );
 }
 
-//index.js:1375 Warning: Each child in a list should have a unique "key" prop.
